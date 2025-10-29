@@ -1,0 +1,271 @@
+.app {
+  width: 370px;
+  min-height: 480px;
+  max-height: 600px;
+  background: #fff;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.10);
+  border-radius: 8px;
+  padding: 0 0 14px 0;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Header */
+.header {
+  background: #f4f6fb;
+  border-bottom: 1px solid #e6e9ef;
+  padding: 18px 24px 4px 24px;
+  border-radius: 8px 8px 0 0;
+}
+
+.header h1 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 0 0 3px 0;
+  color: #2d2239;
+}
+
+.subtitle {
+  color: #746191;
+  margin: 0 0 7px 0;
+  font-size: 0.95rem;
+}
+
+.input-section {
+  padding: 18px 24px 6px 24px;
+  display: flex;
+  gap: 8px;
+}
+
+.note-input {
+  flex: 1 1 0;
+  background: #eaf0fa;
+  border: 1.5px solid #b9c6e5;
+  border-radius: 8px;
+  padding: 11px 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+  transition: border 0.2s;
+}
+.note-input:focus {
+  border-color: #7359ed;
+  background: #f7f4ff;
+}
+
+.add-btn {
+  background: #7359ed;
+  color: #fff;
+  padding: 0 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 7px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+.add-btn:hover {
+  background: #5942c8;
+}
+
+.stats {
+  text-align: right;
+  padding: 0 24px;
+  color: #b3afb4;
+  font-size: 0.9rem;
+}
+
+/* Notes List */
+.notes-list {
+  flex: 1 1 0;
+  overflow-y: auto;
+  padding: 12px 24px 0 24px;
+}
+
+/* Note Card */
+.note-card {
+  background: #f9f8fd;
+  border: 1.5px solid #eae6f7;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  padding: 12px 16px 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-shadow: 0 2px 10px rgba(133,50,255,0.032);
+}
+
+.note-content {
+  max-width: 76%;
+}
+
+.note-text {
+  color: #2f2744;
+  font-size: 1.04rem;
+  font-weight: 500;
+  margin-bottom: 2px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.note-time {
+  color: #9e9ab0;
+  font-size: 0.81rem;
+  margin-top: 2px;
+}
+
+/* Delete Button */
+.delete-btn {
+  background: #f2e8fa;
+  color: #b481e1;
+  border: none;
+  font-size: 0.97rem;
+  border-radius: 7px;
+  font-weight: 700;
+  padding: 6px 10px;
+  margin-left: 8px;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+.delete-btn:hover {
+  background: #fbeafb;
+  color: #fd3ccf;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  margin-top: 42px;
+  color: #b3afb4;
+}
+
+.empty-icon {
+  font-size: 2.2rem;
+}
+.empty-text {
+  font-size: 1.14rem;
+  font-weight: 700;
+  color: #9e9ab0;
+  margin-bottom: 2px;
+}
+.hint {
+  font-size: 0.93rem;
+  color: #b3afb4;
+}
+
+.footer {
+  padding: 8px 24px 0 16px;
+  text-align: right;
+}
+
+.clear-all-btn {
+  background: #fde5ee;
+  color: #df3872;
+  border: none;
+  font-weight: 700;
+  border-radius: 7px;
+  padding: 7px 22px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: background 0.19s, color 0.19s;
+}
+.clear-all-btn:hover {
+  background: #fad2e3;
+  color: #b91956;
+}
+
+
+.folder-select {
+  flex: 1 1 auto;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1.5px solid #b9c6e5;
+  background: #eceffa;
+  color: #196abb;
+  outline: none;
+  transition: border-color 0.18s;
+  cursor: pointer;
+}
+
+.folder-select:focus {
+  border-color: #7359ed;
+  background: #f7f4ff;
+}
+
+.highlight-queue {
+  background: #f7f5fb;
+  border: 1.5px solid #dfd9f7;
+  border-radius: 8px;
+  margin: 14px 24px;
+  padding: 14px 18px;
+  max-height: 160px;
+  overflow-y: auto;
+}
+
+.highlight-queue h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #6a5b9a;
+  border-bottom: 1px solid #dcd8e5;
+  padding-bottom: 6px;
+}
+
+
+.highlight-item {
+  background: white;
+  border-radius: 7px;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 8px rgba(98,60,217,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.95rem;
+  color: #3e336d;
+}
+
+.highlight-item select {
+  align-self: flex-start;
+  padding: 6px 10px;
+  border-radius: 7px;
+  border: 1.2px solid #d3c9f8;
+  background: #fff;
+  color: #6b5b9e;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.18s ease;
+}
+
+.highlight-item select:hover,
+.highlight-item select:focus {
+  border-color: #7359ed;
+  outline: none;
+}
+
+.add-btn:hover,
+.clear-all-btn:hover,
+.delete-btn:hover {
+  filter: brightness(1.1);
+  transition: filter 0.15s ease;
+}
+
+@media (max-width: 400px) {
+  .app {
+    width: 95vw;
+    max-height: 90vh;
+  }
+  
+  .notes-list,
+  .highlight-queue {
+    padding: 0 16px;
+  }
+
+  .input-section {
+    padding: 14px 16px;
+  }
+}

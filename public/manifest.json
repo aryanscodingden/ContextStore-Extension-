@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "ContextStore",
+  "version": "1.0.0",
+  "description": "Your research notes companion for Chrome",
+  "permissions": ["storage", "contextMenus"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "ContextStore"
+  },
+  "externally_connectable": {
+    "matches": [
+      "https://context-store-auth.vercel.app/*"
+    ]
+  },
+  "icons": {
+    "16": "logo192.png",
+    "48": "logo192.png",
+    "128": "logo512.png"
+  }
+}
