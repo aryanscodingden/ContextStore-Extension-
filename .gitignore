@@ -1,42 +1,11 @@
-# Dependencies
-/node_modules
-/.pnp
-.pnp.js
-
-# Testing
-/coverage
-
-# Production build
-/build
-/extension-ready
-
-# Environment variables
+node_modules/
+build/
+dist/
+.cache/
+.DS_Store
 .env
 .env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-# Logs
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-lerna-debug.log*
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# IDE
+yarn-error.log
 .vscode/
 .idea/
-*.swp
-*.swo
-*~
-
-# Temporary files
-*.tmp
-.cache
-
-# Supabase keys (if stored in separate files)
-supabase-keys.json
