@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Volumes/Macbook drive 1/Contextstore/vscode-ext-contextstore",
+      "program": "/Volumes/Macbook drive 1/Contextstore/vscode-ext-contextstore/build/Debug/outDebug"
+    }
+  ]
+}

@@ -33,17 +33,17 @@
         }
     });
 })();
-
+if (window.chrome && window.chrome.runtime) {
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.type === 'GET_PAGE_ERRORS') {
       console.log('[ContextStore] Sending page errors:', pageErrors.length);
       sendResponse({ 
-        errors: pageErrors.slice(-5), // Send last 5 errors
+        errors: pageErrors.slice(-5),
         url: window.location.href,
         title: document.title
-      });
-      return true;
-    }
-  });
+       });
+      }
+    });
+  }
 
   console.log('[ContextStore] Content script loaded on:', window.loacation.href);
