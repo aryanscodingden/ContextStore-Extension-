@@ -1,0 +1,102 @@
+{
+  "name": "contextstore",
+  "displayName": "ContextStore",
+  "description": "Folders and notes synced via Supabase, accessible from a dedicated sidebar view.",
+  "version": "0.1.0",
+  "publisher": "your-publisher-id",
+  "license": "MIT",
+  "type": "commonjs",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "resources/extension-icon.png",
+  "main": "./out/extension.js",
+
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "contextstoreContainer",
+          "title": "ContextStore",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "contextstoreContainer": [
+        {
+          "id": "contextstoreView",
+          "name": "notes",
+          "icon": "resources/notebook.svg"
+        }
+      ]
+    },
+    
+    "commands": [
+      { "command": "contextstore.refresh", "title": "ContextStore: Refresh", "icon": "$(refresh)" },
+      { "command": "contextstore.signIn", "title": "ContextStore: Sign In" },
+      { "command": "contextstore.signUp", "title": "ContextStore: Sign Up" },
+      { "command": "contextstore.signOut", "title": "ContextStore: Sign Out" },
+      { "command": "contextstore.createFolder", "title": "Create Folder", "icon": "$(new-folder)" },
+      { "command": "contextstore.deleteFolder", "title": "Delete Folder", "icon": "$(trash)" },
+      { "command": "contextstore.createNote", "title": "Create Note", "icon": "$(new-file)" },
+      { "command": "contextstore.openNote", "title": "Open Note", "icon": "$(go-to-file)" },
+      { "command": "contextstore.editNote", "title": "Edit Note in Editor", "icon": "$(edit)" },
+      { "command": "contextstore.quickEditNote", "title": "Quick Edit Note", "icon": "$(pencil)" },
+      { "command": "contextstore.copyNote", "title": "Copy Note", "icon": "$(copy)" },
+      { "command": "contextstore.deleteNote", "title": "Delete Note", "icon": "$(trash)" },
+      { "command": "contextstore.saveSelection", "title": "ContextStore: Save Selection/File", "icon": "$(save)" },
+      { "command": "contextstore.saveFile", "title": "ContextStore: Save Entire File", "icon": "$(save-all)" }
+    ],
+    "menus": {
+      "view/title": [
+        { "command": "contextstore.refresh", "when": "view == contextstoreView", "group": "navigation" },
+        { "command": "contextstore.createFolder", "when": "view == contextstoreView", "group": "navigation" }
+      ],
+      "view/item/context": [
+        { "command": "contextstore.createNote", "when": "viewItem == folder", "group": "inline" },
+        { "command": "contextstore.deleteFolder", "when": "viewItem == folder", "group": "inline" },
+        { "command": "contextstore.editNote", "when": "viewItem == note", "group": "inline@1" },
+        { "command": "contextstore.quickEditNote", "when": "viewItem == note", "group": "edit@1" },
+        { "command": "contextstore.copyNote", "when": "viewItem == note", "group": "inline@2" },
+        { "command": "contextstore.deleteNote", "when": "viewItem == note", "group": "inline@3" }
+      ],
+      "editor/context": [
+        { "command": "contextstore.saveSelection", "when": "editorHasSelection", "group": "contextstore@1" },
+        { "command": "contextstore.saveFile", "group": "contextstore@2" }
+      ],
+      "commandPalette": [
+        { "command": "contextstore.saveSelection", "when": "editorIsOpen" },
+        { "command": "contextstore.saveFile", "when": "editorIsOpen" },
+        { "command": "contextstore.deleteFolder", "when": "false" },
+        { "command": "contextstore.deleteNote", "when": "false" },
+        { "command": "contextstore.createNote", "when": "false" },
+        { "command": "contextstore.openNote", "when": "false" },
+        { "command": "contextstore.editNote", "when": "false" },
+        { "command": "contextstore.quickEditNote", "when": "false" },
+        { "command": "contextstore.copyNote", "when": "false" }
+      ]
+    }
+  },
+
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package"
+  },
+
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "@types/node": "^20.11.30",
+    "vsce": "^2.15.0"
+  },
+
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0",
+    "dotenv": "^16.4.5"
+  }
+}

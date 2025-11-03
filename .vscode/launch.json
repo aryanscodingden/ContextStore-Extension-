@@ -2,6 +2,18 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Run Extension",
+      "type": "extensionHost",
+      "request": "launch",
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}/vscode-ext-contextstore"
+      ],
+      "outFiles": [
+        "${workspaceFolder}/vscode-ext-contextstore/out/**/*.js" 
+      ],
+      "preLaunchTask": "npm: compile - vscode-ext-contextstore"
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "lldb",
       "request": "launch",

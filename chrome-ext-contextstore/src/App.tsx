@@ -3,9 +3,9 @@ import { supabase } from "./supabaseClient";
 import "./App.css";
 
 //declare global {
-  //interface Window {
-    //chrome?: any;
-  //}
+//interface Window {
+//chrome?: any;
+//}
 //}
 
 interface Folder {
@@ -70,7 +70,6 @@ export default function App() {
   );
   const [errorMsg, setErrorMsg] = useState("");
 
-  
   useEffect(() => {
     let mounted = true;
 
@@ -99,7 +98,7 @@ export default function App() {
       }
     };
 
-    checkSession();
+checkSession();
 
     const {
       data: { subscription },
@@ -141,19 +140,19 @@ export default function App() {
     }
   }, [session]);
 
-  useEffect(() => {
+useEffect(() => {
     if (session?.user?.id) {
       fetchFolders();
     }
   }, [session]);
 
-  useEffect(() => {
+useEffect(() => {
     if (selectedFolder) {
       fetchNotes();
     }
   }, [selectedFolder]);
 
-  const handleSignIn = async () => {
+const handleSignInNow = async () => {
     if (!email || !password) {
       setErrorMsg("Enter email and password");
       return;
@@ -178,7 +177,7 @@ export default function App() {
     }
   };
 
-  const handleSignUp = async () => {
+const handleSignUp = async () => {
     if (!email || !password) {
       setErrorMsg("Enter email and password");
       return;
@@ -197,7 +196,7 @@ export default function App() {
         password,
       });
 
-      if (error) throw error;
+if (error) throw error;
 
       if (data.user) {
         console.log("Account created:", data.user.email);
@@ -414,7 +413,7 @@ export default function App() {
     });
   };
 
-  const showDeleteConfirmation = (item: DeleteItem) => {
+  const showDelete = (item: DeleteItem) => {
     setItemToDelete(item);
     setShowConfirmDelete(true);
   };
@@ -476,7 +475,6 @@ export default function App() {
     );
   }
 
-  // Auth Screen
   if (!session) {
     return (
       <div
@@ -511,7 +509,7 @@ export default function App() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           onKeyDown={(e) =>
-            e.key === "Enter" && (isSignUp ? handleSignUp() : handleSignIn())
+            e.key === "Enter" && (isSignUp ? handleSignUp() : handleSignInNow())
           }
           disabled={authState === "loading"}
           style={{
@@ -524,7 +522,7 @@ export default function App() {
           }}
         />
         <button
-          onClick={isSignUp ? handleSignUp : handleSignIn}
+          onClick={isSignUp ? handleSignUp : handleSignInNow}
           disabled={!email || !password || authState === "loading"}
           style={{
             width: "100%",
@@ -601,7 +599,7 @@ export default function App() {
     );
   }
 
-  // Expanded note view
+  
   if (expandedNote) {
     return (
       <div
@@ -689,7 +687,7 @@ export default function App() {
           <h2 style={{ margin: 0, fontSize: 20, color: "#1f2937" }}>
             ContextStore
           </h2>
-          <p style={{ margin: "4px 0 0", fontSize: 11, color: "#6b7280" }}>
+          <p style={{ margin: "4px 0 0", fontSize: 11, color: "#777e8cff" }}>
             {session.user.email}
           </p>
         </div>
@@ -728,8 +726,6 @@ export default function App() {
         </div>
       )}
 
-      {/* Rest of UI - keeping your existing JSX exactly as is */}
-      {/* (Highlight dialog, folders, notes sections - unchanged from your code) */}
       {showHighlightSave && pendingHighlight && (
         <div
           style={{
@@ -785,7 +781,7 @@ export default function App() {
                 <summary
                   style={{ fontSize: 11, color: "#dc2626", cursor: "pointer" }}
                 >
-                  ⚠️ {pendingHighlight.recentErrors.length} console error(s)
+               {pendingHighlight.recentErrors.length} console error(s)
                   captured
                 </summary>
                 <div
@@ -1040,7 +1036,7 @@ export default function App() {
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
-                    showDeleteConfirmation({
+                    showDelete({
                       type: "folder",
                       id: folder.id,
                       name: folder.name,
@@ -1315,7 +1311,7 @@ export default function App() {
                       </button>
                       <button
                         onClick={() =>
-                          showDeleteConfirmation({ type: "note", id: note.id })
+                          showDelete({ type: "note", id: note.id })
                         }
                         style={{
                           background: "none",
@@ -1345,8 +1341,8 @@ export default function App() {
             border: "1px dashed #d1d5db",
           }}
         >
-          <p style={{ margin: 0, color: "#6b7280", fontSize: 13 }}>
-            Select a folder to view notes
+          <p style={{ margin: 0, color: "#5e6571ff", fontSize: 13 }}>
+            Select a folder to view the notes
           </p>
         </div>
       )}
