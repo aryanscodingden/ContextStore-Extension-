@@ -1,5 +1,5 @@
 # ContextStore-Extension
-A Simple Extenstion that syncs your reasearch or code on vscode, through a extenstion on chrome so you don't have to go scouring for it!
+A Simple Extenstion that `syncs your reasearch or code on vscode`, through a extenstion on chrome so you don't have to go scouring for it!
 ## FEATURES
 -  **Save Notes By Highlighting on pages** 
 -  **Auto-sync on save** (Automatically send all your notes to vscode)
@@ -8,9 +8,9 @@ A Simple Extenstion that syncs your reasearch or code on vscode, through a exten
 -  **Simple UI** 
 -  **Note VSCode is read-only for now, will add edit acess through VSCode Soon!**
 
-## How to run? 
+## `How to run`? 
 - **Download the source code**
-- **For Chrome**
+`For Chrome`
 - Unzip the files
 - Navigate to chrome://extensions/
 - Toggle Developer mode 
@@ -18,7 +18,7 @@ A Simple Extenstion that syncs your reasearch or code on vscode, through a exten
 - Go to the folder where you saved the source code 
 - Go to Chrome-ext-contextstore, click on the build folder & open
 - Enjoy!
-- **For VSCode**
+`For VSCode`
 - Open the folder in VSCode
 - Hit F5 & see the extenstion in your sidebar!
 - (Coming to VSCode Marketplace soon!)
@@ -47,4 +47,4 @@ Type in Command Palette (`Cmd+Shift+P`):
 | Can't save file | Verify signed in, check folder exists |
 
 ## Support
-You can mail me at aryanscode@gmail.com, or raise a issue and i'll fix it! 
+You can mail me at `aryanscode@gmail.com`, or raise a issue and i'll fix it! 
