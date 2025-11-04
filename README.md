@@ -44,7 +44,7 @@ Type in Command Palette (`Cmd+Shift+P`):
 | Changes not syncing | Press Cmd+S, check internet, refresh Chrome |
 | "Failed to sync" | Sign out & sign back in & try again  |
 | Note won't open | Click refresh (↻), sign out/in |
-| Can't save file | Verify signed in, check folder exists |
+| Can't save file | VSCode is Read-Only for now, will add editing soon |
 
 ## Support
 You can mail me at `aryanscode@gmail.com`, or raise a issue and i'll fix it! 
