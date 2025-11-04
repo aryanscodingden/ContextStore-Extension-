@@ -42,7 +42,7 @@ Type in Command Palette (`Cmd+Shift+P`):
 | Problem | Solution |
 |---------|----------|
 | Changes not syncing | Press Cmd+S, check internet, refresh Chrome |
-| "Failed to sync" | Check Supabase is online, verify credentials |
+| "Failed to sync" | Sign out & sign back in & try again  |
 | Note won't open | Click refresh (↻), sign out/in |
 | Can't save file | Verify signed in, check folder exists |
 
